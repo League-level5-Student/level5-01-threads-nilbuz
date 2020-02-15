@@ -1,6 +1,5 @@
 package _00_Thread_Demo;
 
-
 import org.jointheleague.graphical.robot.Robot;
 
 public class ThreadDemo {
@@ -28,6 +27,10 @@ public class ThreadDemo {
 			r1.start();
 			r2.start();
 			r3.start();
+
+//			timmy.move(400);
+//			tammy.move(400);
+//			sammy.move(400);
 			
 	}
 }
