@@ -13,6 +13,7 @@ public class ThreadedReverseGreeting {
 	public static void main(String[] args) {
 
 		newThread(0);
+	
 
 	}
 
@@ -20,14 +21,21 @@ public class ThreadedReverseGreeting {
 
 		if (num < 50) {
 
+			newThread(num + 1);
+			
 			Thread thread = new Thread(() -> {
 				System.out.println("Hello from Thread #" + num + "!");
-				newThread(num + 1);
+				
 			});
-
+		
 			thread.start();
-
+			
+			try {
+				thread.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
 		}
-
 	}
 }
